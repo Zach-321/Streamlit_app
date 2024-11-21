@@ -61,7 +61,7 @@ with tab2:
     output = unique_names_summary(data, year_input)
     st.dataframe(output)
 
-with st.expander('Feedback🤔', icon  = '🤔'):
+with st.expander('Feedback', icon  = '🤔'):
     st.text('How would you rate your experience?')
     face = st.feedback('faces')
     if face is not None:
