@@ -43,15 +43,7 @@ with st.sidebar:
     input_name = st.text_input('Enter a Name:','Zachary')
     year_input =st.slider('Year', 1880, 2023, value = 2003)
     n_names = st.radio('Number of Names per Sex', [3,5,10,20])
-    st.text('How would you rate your experience?')
-    face = st.feedback('faces')
-    if face is not None:
-        if face <= 1:
-            st.text('That\'s too bad')
-        elif face == 2:
-            st.text('OK')
-        elif face >= 3:
-            st.text('Cool!')
+    
 
 tab1, tab2 = st.tabs(['Name', 'Year'])
 with tab1:
@@ -68,3 +60,14 @@ with tab2:
     st.write('Unique Names Table')
     output = unique_names_summary(data, year_input)
     st.dataframe(output)
+
+with st.expander('Feedback🤔', icon  = '🤔'):
+    st.text('How would you rate your experience?')
+    face = st.feedback('faces')
+    if face is not None:
+        if face <= 1:
+            st.text('That\'s too bad')
+        elif face == 2:
+            st.text('OK')
+        elif face >= 3:
+            st.text('Cool!')
