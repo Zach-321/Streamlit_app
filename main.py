@@ -37,12 +37,12 @@ def ohw(df):
 data = load_name_data()
 ohw_data = ohw(data)
 
-st.title('My Cool Name App')
+st.title('Fun Name Data')
 
 with st.sidebar:
     input_name = st.text_input('Enter a Name:','Zachary')
     year_input =st.slider('Year', 1880, 2023, value = 2003)
-    n_names = st.radio('Number of Names per Sex', [3,4,5,6,10])
+    n_names = st.radio('Number of Names per Sex', [3,5,10,20])
 
 tab1, tab2 = st.tabs(['Name', 'Year'])
 with tab1:
