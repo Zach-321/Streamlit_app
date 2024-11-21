@@ -57,7 +57,7 @@ def name_frequencies_plot(df, year=2000, width=800, height=600):
     )
     return fig
 
-def name_trend_plot(df, name='John', width=800, height=1000):
+def name_trend_plot(df, name='Zachary'):
     name_data = df[df['name'] == name].copy()
     color_map = {"M": "lightblue", "F": "hotpink"}
 
