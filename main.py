@@ -65,9 +65,13 @@ with st.expander('Feedback', icon  = '🤔'):
     st.text('How would you rate your experience?')
     face = st.feedback('faces')
     if face is not None:
-        if face <= 1:
-            st.text('That\'s too bad')
+        if face == 0:
+            st.text('That\'s not very nice!')
+        if face == 1:
+            st.text('Are you sure?')
         elif face == 2:
-            st.text('OK')
-        elif face >= 3:
-            st.text('Cool!')
+            st.text('That\'s OK')
+        elif face == 3:
+            st.text('Nice')
+        elif face == 4:
+            st.text('Now you\'re talking')
