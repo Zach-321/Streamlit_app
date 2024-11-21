@@ -65,7 +65,7 @@ def name_trend_plot(df, name='John', width=800, height=1000):
         print("Name not found in the dataset.")
     else:
         # Group by Year and Sex, and calculate total counts
-        #sex_counts = name_data.groupby(['year', 'sex'])['count'].sum().reset_index()
+        sex_counts = name_data.groupby(['year', 'sex'])['count'].sum().reset_index()
 
         # Calculate total count per year and male-to-female ratio
         yearly_counts = name_data.groupby(['year', 'sex']).sum()['count'].unstack(fill_value=0)
