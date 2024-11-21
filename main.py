@@ -47,9 +47,9 @@ with st.sidebar:
 tab1, tab2 = st.tabs(['Name', 'Year'])
 with tab1:
     name_data = data[data['name']== input_name].copy()
-    fig = px.line(name_data, x = 'year', y = 'count', color = 'sex')
+    #fig = px.line(name_data, x = 'year', y = 'count', color = 'sex')
     name_output = name_trend_plot(name_data, input_name)
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
     st.plotly_chart(name_output)
 
 with tab2:
