@@ -75,30 +75,26 @@ def name_trend_plot(df, name='John', width=800, height=600):
         yearly_counts = yearly_counts.reset_index()
 
         # Create subplots with shared x-axis
-        fig = make_subplots(
-            rows=2, cols=1, shared_xaxes=True,
-            subplot_titles=("Total Count Over Time", "Sex Balance Ratio Over Time")
-        )
+        # fig = make_subplots(
+        #     rows=2, cols=1, shared_xaxes=True,
+        #     subplot_titles=("Total Count Over Time", "Sex Balance Ratio Over Time")
+        # )
 
-        # Add total count plot
-        fig.add_trace(
-            go.Scatter(x=yearly_counts['year'], y=yearly_counts['M'], mode='lines', name='Male', line=dict(color=color_map['M'])),
-            row=1, col=1
-        )
+        # # Add total count plot
+        # fig.add_trace(
+        #     go.Scatter(x=yearly_counts['year'], y=yearly_counts['M'], mode='lines', name='Male', line=dict(color=color_map['M'])),
+        #     row=1, col=1
+        # )
 
-        fig.add_trace(
-            go.Scatter(x=yearly_counts['year'], y=yearly_counts['F'], mode='lines', name='Female', line=dict(color=color_map['F'])),
-            row=1, col=1
-        )
+        # fig.add_trace(
+        #     go.Scatter(x=yearly_counts['year'], y=yearly_counts['F'], mode='lines', name='Female', line=dict(color=color_map['F'])),
+        #     row=1, col=1
+        # )
 
         # Add male and female ratio plot
+        fig = go.Scatter(x=yearly_counts['year'], y=yearly_counts['Male_Ratio'], mode='lines', showlegend=False,  line=dict(color=color_map['M']))
         fig.add_trace(
-            go.Scatter(x=yearly_counts['year'], y=yearly_counts['Male_Ratio'], mode='lines', showlegend=False,  line=dict(color=color_map['M'])),
-            row=1, col=1
-        )
-        fig.add_trace(
-            go.Scatter(x=yearly_counts['year'], y=yearly_counts['Female_Ratio'], mode='lines', showlegend=False, line=dict(color=color_map['F'])),
-            row=1, col=1
+            go.Scatter(x=yearly_counts['year'], y=yearly_counts['Female_Ratio'], mode='lines', showlegend=False, line=dict(color=color_map['F']))
         )
 
         # Update layout
@@ -111,7 +107,7 @@ def name_trend_plot(df, name='John', width=800, height=600):
             width=width
         )
 
-        return fig[1]
+        return fig
 
 def name_sex_balance_plot(df, name='John'):
     name_data = df[df['name'] == name].copy()
