@@ -66,12 +66,12 @@ with st.expander('Feedback', icon  = '🤔'):
     face = st.feedback('faces')
     if face is not None:
         if face == 0:
-            st.text('That\'s not very nice!')
-        if face == 1:
+            st.text('Lying is a sin!')
+        elif face == 1:
             st.text('Are you sure?')
         elif face == 2:
-            st.text('That\'s OK')
+            st.text('That\'s it?')
         elif face == 3:
-            st.text('Nice')
+            st.text('Just pick the happiest face')
         elif face == 4:
-            st.text('Now you\'re talking')
+            st.text('Thank you')
